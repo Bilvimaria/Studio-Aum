@@ -1,0 +1,123 @@
+@charset "UTF-8";
+.test, .nav label, .nav ul li a {
+  color: black;
+  background: #e8c519;
+}
+
+.block, .nav input.trigger:checked ~ ul,
+.nav input.trigger:checked ~ ul li ul, .nav label, .nav ul li a {
+  display: block;
+}
+
+.nav {
+  position: relative;
+}
+.nav ul {
+  display: none;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media all and (min-width: 48em) {
+  .nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+  .nav ul li:hover > ul {
+    display: block;
+  }
+}
+@media all and (min-width: 48em) {
+  .nav ul li {
+    position: relative;
+    text-align: center;
+    flex: 1;
+  }
+}
+.nav ul li a {
+  padding: 0.8em;
+  text-decoration: none;
+  border-right: 1px solid #34495e;
+  font-size: 0.9em;
+}
+.nav ul li a:hover {
+  background: #e8c519;
+}
+@media all and (min-width: 48em) {
+  .nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 3.0625em;
+    left: 0;
+    display: block;
+    width: 12.5em;
+    z-index: 200;
+  }
+}
+@media all and (min-width: 48em) {
+  .nav ul li ul li {
+    text-align: left;
+  }
+}
+.nav ul li ul li a {
+  padding-left: 1.5em;
+}
+@media all and (min-width: 48em) {
+  .nav ul li ul li ul {
+    z-index: 300;
+    top: 0;
+    left: 12.4em;
+  }
+}
+.nav ul li ul li ul li a {
+  padding-left: 3.125em;
+}
+@media all and (min-width: 48em) {
+  .nav ul li ul li ul li a {
+    padding-left: 30px;
+  }
+}
+.nav input.trigger {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.nav label {
+  position: relative;
+  min-height: 2em;
+  padding: 0.45em;
+  font-size: 0.9em;
+  margin: 0;
+  cursor: pointer;
+  line-height: 2em;
+  text-align: left !important;
+}
+@media all and (min-width: 48em) {
+  .nav label {
+    display: none;
+  }
+}
+.nav label:after {
+  position: absolute;
+  right: 0.2em;
+  top: 0.1em;
+  content: "≡";
+  font-size: 2.5em;
+  font-weight: 300;
+  color: black;
+}
+
+.nav input.trigger:checked ~ ul,
+.nav input.trigger:checked ~ ul li ul {
+  padding: inherit;
+}
+@media all and (min-width: 48em) {
+  .nav input.trigger:checked ~ ul,
+.nav input.trigger:checked ~ ul li ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/*# sourceMappingURL=nav.css.map */

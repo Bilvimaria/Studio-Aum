@@ -1,0 +1,118 @@
+@import "variables";
+.test {
+    color: $black;
+    background: $yellow;
+}
+
+.block {
+    display: block;
+}
+
+.nav {
+    position: relative;
+    ul {
+        display: $nothing;
+        width: $maximum;
+        list-style: $nothing;
+        margin: $zero;
+        padding: $zero;
+        @include large-screen {
+            display: flex;
+            flex-direction: row;
+            li:hover>ul {
+                display: block;
+            }
+        }
+        li {
+            @include large-screen {
+                position: relative;
+                text-align: center;
+                flex: $unit-grow;
+            }
+            a {
+                @extend .test;
+                @extend .block;
+                padding: .8em;
+                text-decoration: $nothing;
+                border-right: 1px solid #34495e;
+                font-size: $paragraph-medium;
+            }
+            a:hover {
+                background: $yellow;
+            }
+            ul {
+                @include large-screen {
+                    display: $nothing;
+                    position: absolute;
+                    top: 3.0625em;
+                    left: $zero;
+                    display: block;
+                    width: 12.5em;
+                    z-index: 200;
+                }
+                li {
+                    @include large-screen {
+                        text-align: left;
+                    }
+                    a {
+                        padding-left: 1.5em;
+                    }
+                    ul {
+                        @include large-screen {
+                            z-index: 300;
+                            top: $zero;
+                            left: 12.4em;
+                        }
+                        li {
+                            a {
+                                @include large-screen {
+                                    padding-left: 30px;
+                                }
+                                padding-left: 3.125em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    input.trigger {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    label {
+        @include large-screen {
+            display: $nothing;
+        }
+        position: relative;
+        @extend .block;
+        min-height: 2em;
+        padding: .45em;
+        font-size: .9em;
+        margin: $zero;
+        cursor: pointer;
+        line-height: 2em;
+        text-align: left !important;
+        @extend .test;
+    }
+    label:after {
+        position: absolute;
+        right: .2em;
+        top: .1em;
+        content: "\2261";
+        font-size: 2.5em;
+        font-weight: 300;
+        color: $black;
+    }
+}
+
+.nav input.trigger:checked~ul,
+.nav input.trigger:checked~ul li ul {
+    @extend .block;
+    padding: inherit;
+    @include large-screen {
+        display: flex;
+        flex-direction: row;
+    }
+}

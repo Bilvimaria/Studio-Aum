@@ -1,0 +1,232 @@
+@import "variables";
+@import "mixins";
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: $zero;
+    padding: $zero;
+}
+
+html,
+body {
+    height: $maximum;
+    background: $black;
+    color: $white;
+    text-align: center;
+}
+
+body {
+    margin: $body-margin;
+}
+
+img {
+    max-width: $maximum;
+}
+
+body {
+    h1,
+    h2 {
+        color: $white;
+        padding: 0.9em;
+        @include tablet-view {
+            font-size: $font-medium;
+        }
+        @include mobile-view {
+            font-size: $font-small;
+            padding: 3%;
+            transform: translateY(0%);
+        }
+    }
+    h2 {
+        color: $white;
+        padding: 0.6em;
+    }
+    p {
+        padding: 1.8em;
+        @include tablet-view {
+            font-size: $paragraph-medium;
+        }
+    }
+}
+
+.main-container {
+    background-color: $black;
+    height: $maximum;
+}
+
+.logo {
+    padding: 1.2em;
+    width: $logo-size-desktop;
+    height: $logo-size-desktop;
+    @include tablet-view {
+        max-width: $logo-size-tablet;
+        max-height: $logo-size-tablet;
+    }
+    @include mobile-view {
+        max-width: $logo-size-mobile;
+        max-height: $logo-size-mobile;
+    }
+}
+
+.dark {
+    color: $black;
+    background-color: $grey;
+}
+
+.social {
+    list-style-type: $nothing;
+    background-color: $yellow;
+    li {
+        display: $series;
+        @include tablet-view {
+            font-size: 2em;
+        }
+    }
+    i {
+        font-size: 1.7em;
+        padding: 2%;
+        color: $black;
+        @include tablet-view {
+            font-size: 0.8em;
+        }
+        @include mobile-view {
+            font-size: 0.7em;
+        }
+    }
+    i:hover {
+        color: $white;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-auto-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: $image-gap;
+    grid-auto-flow: column;
+    img {
+        flex: $unit-grow;
+        object-fit: fill;
+        max-width: $maximum;
+        border: $black-border-thick;
+    }
+}
+
+figure {
+    display: flex;
+    flex-direction: row;
+    margin: $zero;
+}
+
+.image-1 {
+    grid-row: 1/4;
+    grid-column: 1/4;
+}
+
+.image-2 {
+    grid-row: 1/3;
+    grid-column: 4/6;
+}
+
+.image-3 {
+    grid-row: 3/5;
+    grid-column: 4/6;
+}
+
+.image-4 {
+    grid-row: 5/7;
+    grid-column: 3/6;
+}
+
+.image-5 {
+    grid-row: 4/7;
+    grid-column: 1/3;
+}
+
+.image-6 {
+    grid-row: 4/5;
+    grid-column: 3/4;
+}
+
+.blue {
+    background-color: $brandcolor-blue;
+}
+
+.bluishgrey {
+    background-color: $brandcolor-bluishgrey;
+}
+
+.grey {
+    background-color: $brandcolor-grey;
+}
+
+.orange {
+    background-color: $brandcolor-orange;
+}
+
+@include tablet-view {
+    .circle {
+        border-radius: $maximum/2;
+        max-width: $maximum*0.4;
+    }
+    .invisible {
+        display: $nothing;
+    }
+}
+
+@include mobile-view {
+    .invisible {
+        display: $nothing;
+    }
+}
+
+@include large-screen {
+    .row {
+        display: flex;
+        margin: 0;
+    }
+    [class*="col-"]:last-child {
+        margin: 0;
+    }
+    .col-1 {
+        flex: 1;
+    }
+    .col-2 {
+        flex: 2;
+    }
+    .col-3 {
+        flex: 3;
+    }
+    .col-4 {
+        flex: 4;
+    }
+    .col-5 {
+        flex: 5;
+    }
+    .col-6 {
+        flex: 6;
+    }
+    .col-7 {
+        flex: 7;
+    }
+    .col-8 {
+        flex: 8;
+    }
+    .col-9 {
+        flex: 9;
+    }
+    .col-10 {
+        flex: 10;
+    }
+    .col-11 {
+        flex: 11;
+    }
+    .col-12 {
+        flex: 12;
+    }
+}

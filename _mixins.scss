@@ -1,0 +1,18 @@
+$tablet-width: 48em;
+$mobile-width: 30em;
+@mixin large-screen{
+  @media all and (min-width:$tablet-width){
+    @content;
+  }
+}
+
+@mixin tablet-view{
+    @media all and (max-width:$tablet-width){
+      @content;
+    }
+}
+@mixin mobile-view{
+    @media all and (max-width:$mobile-width){
+      @content;
+    }
+}
